@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: #d0eaff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product{
+            width: 90%;
+            max-width: 750px;
+            display: flex;
+        }
+        .gallery{
+            flex-basis: 47%;
+            background: #241e20;
+        }
+        .gallery img{
+            width: 100%;
+            display: block;
+            padding-top: 100px;
+        }
+        .details{
+            flex-basis: 53%;
+            background: #fff;
+            padding: 40px;
+            padding-left: 60px;
+            box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1);
+            font-size: 13px;
+            font-weight: 500;
+            color:#777;
+        }
+        .details h1{
+            color: #333;
+            font-size: 35px;
+        }
+        .details h2{
+            color:#555;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .details h3{
+            color:#00d874;
+            margin-bottom: 20px;
+        }
+        .details form{
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .size-select{
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .size-select p{ 
+            width: 70px;
+        }
+        .size-select input:checked + span{
+            color: blue;
+            font-weight: 600;
+        }
+        .size-select span{
+            padding: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .color-select{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .color-select p{
+            width: 75px;
+        }
+        .color-select span{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .color-1{
+            background: green; 
+        }
+        .color-2{
+            background: blue; 
+        }
+        .color-3{
+            background: white; 
+        }
+        .color-select input:checked + span{
+            transform: scale(0.7);
+            box-shadow: 0 0 0 4px #fff,0 0 0 6px #000,;
+        }
+        .quantity-select{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .quantity-select p{
+            width: 75px;
+        }
+        .quantity-select input{
+            background: #eee;
+            border: 0;
+            outline: 0;
+            padding: 2px 2px 2px 15px;
+            width: 50px;
+            border-radius: 12px;
+        }
+        form button{
+            background: #553ff0;
+            color:#fff;
+            font-size: 17px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 30px;
+            border: 0;
+            outline: 0;
+            margin-top: 50px;
+            box-shadow: 0px 10px 10px rgba(85,63,240,0.25);
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="gallery">
+                <img src="C:\Users\venky\OneDrive\Desktop\tasks.html\WhatsApp Image 2024-04-16 at 7.55.57 AM (1).jpeg">
+            </div>
+            <div class="details">
+                <h1>casual t-shirt</h1>
+                <h2>$15.00</h2>
+                <h3>30% OFF</h3>
+                <p>polo is a americal manufaturer product and it is  
+                    highly comfortable and stylish</p>
+                    <form>
+                        <div class="size-select">
+                            <p>size</p>
+                            <label for="small"></label>
+                            <input type="radio" name="size" id="small">
+                            <span>S</span>
+                            <label for="medium"></label>
+                            <input type="radio" name="size" id="medium">
+                            <span>M</span>
+                            <label for="large"></label>
+                            <input type="radio" name="size" id="large">
+                            <span>L</span>
+                            <label for="extralarge"></label>
+                            <input type="radio" name="size" id="extralarge">
+                            <span>XL</span>
+
+                        </div>
+                        <div class="color-select">
+                            <p>color</p>
+                            <label for="green">
+                                <input type="radio" name="color" id="green">
+                                <span class="color-1"></span>
+                            </label>
+                            <label for="blue">
+                                <input type="radio" name="color" id="blue">
+                                <span class="color-2"></span>
+                            </label>
+                            <label for="white">
+                                <input type="radio" name="color" id="white">
+                                <span class="color-3"></span>
+                            </label>
+                        </div>
+                        <div class="quantity-select">
+                            <p>quantity</p>
+                            <input type="number" value="1">
+                        </div>
+                        <button>Buy Now</button>
+                    </form>
+
+            </div>
+        </div>
+    </div>
+   <script>
+    // Function to change the color of the t-shirt image based on selected color
+    function changeColor(color) {
+        // Get the t-shirt image element
+        var tshirtImage = document.querySelector('.gallery img');
+
+        // Set the source of the image based on the selected color
+        switch(color) {
+            case 'green':
+                tshirtImage.src = 'WhatsApp Image 2024-04-16 at 7.55.57 AM (1).jpeg';
+                break;
+            case 'blue':
+                tshirtImage.src = 'WhatsApp Image 2024-04-16 at 7.55.57 AM.jpeg';
+                break;
+            case 'white':
+                tshirtImage.src = 'WhatsApp Image 2024-04-16 at 7.55.58 AM.jpeg';
+                break;
+            default:
+                tshirtImage.src = 'WhatsApp Image 2024-04-16 at 7.55.57 AM (1).jpeg'; // Set a default image or leave it blank if no default
+        }
+    }
+    
+    // Add event listeners to color options
+    var colorInputs = document.querySelectorAll('.color-select input[type="radio"]');
+    colorInputs.forEach(function(input) {
+        input.addEventListener('change', function() {
+            changeColor(input.id);
+        });
+    });
+</script>
+
+    
+</body>
+</html>
